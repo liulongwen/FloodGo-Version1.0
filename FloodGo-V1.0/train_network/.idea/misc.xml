@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+<<<<<<< HEAD
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (PyTorch)" project-jdk-type="Python SDK" />
+=======
+<<<<<<< Updated upstream
+  <component name="ProjectRootManager" version="2" project-jdk-name="tensorflow" project-jdk-type="Python SDK" />
+=======
+  <component name="ProjectRootManager" version="2" project-jdk-name="pyttorch_gpu" project-jdk-type="Python SDK" />
+>>>>>>> Stashed changes
+>>>>>>> 51ee597ce463247124e2737eb2277e88af80b714
+</project>
