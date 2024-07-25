@@ -6,16 +6,18 @@ from train_network.calculate_tool.data_preprocess1 import timefn
 
 def get_file_path(sheet_name):
     global file_path
-    file_path_list = ['C:/Users/Longwen-Liu/Desktop/洪水预处理/1984~1999年洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/2000~2023年洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(0.5)1984~1999年洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(0.5)2000~2023年洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(0.8)1984~1999年洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(0.8)2000~2023年洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(1.2)1984~1999年洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(1.2)2000~2023年洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(1.5)1984~1999年洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(1.5)2000~2023年洪水数据预处理.xlsx']  # Change to your file path
+    file_path_list = [
+        r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\Historical flood data from 1984 to 1999.xlsx',
+        r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\Historical flood data from 2000 to 2023.xlsx',
+        r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(0.5 times) Simulated flood data from 1984 to 1999.xlsx',
+        r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(0.5 times) Simulated flood data from 2000 to 2023.xlsx',
+        r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(0.8 times) Simulated flood data from 1984 to 1999.xlsx',
+        r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(0.8 times) Simulated flood data from 2000 to 2023.xlsx',
+        r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(1.2 times) Simulated flood data from 1984 to 1999.xlsx',
+        r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(1.2 times) Simulated flood data from 2000 to 2023.xlsx',
+        r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(1.5 times) Simulated flood data from 1984 to 1999.xlsx',
+        r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(1.5 times) Simulated flood data from 2000 to 2023.xlsx']
+    # Change to your file path
 
     file_class1 = int(sheet_name[:4])
     if 1984 <= file_class1 <= 1999:
@@ -75,16 +77,18 @@ def generate_dataset_from_sheet(sheet_names, is_policy=True):
 @timefn
 def generate_dataset_from_sheet_bata(sheet_names_val, is_policy=True):
     global features, labels
-    file_path_list = ['C:/Users/Longwen-Liu/Desktop/洪水预处理/1984~1999年洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/2000~2023年洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(0.5)1984~1999年洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(0.5)2000~2023年洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(0.8)1984~1999年洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(0.8)2000~2023年洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(1.2)1984~1999年洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(1.2)2000~2023年洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(1.5)1984~1999年洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(1.5)2000~2023年洪水数据预处理.xlsx']  # Change to your file path
+    file_path_list = [
+        r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\Historical flood data from 1984 to 1999.xlsx',
+        r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\Historical flood data from 2000 to 2023.xlsx',
+        r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(0.5 times) Simulated flood data from 1984 to 1999.xlsx',
+        r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(0.5 times) Simulated flood data from 2000 to 2023.xlsx',
+        r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(0.8 times) Simulated flood data from 1984 to 1999.xlsx',
+        r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(0.8 times) Simulated flood data from 2000 to 2023.xlsx',
+        r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(1.2 times) Simulated flood data from 1984 to 1999.xlsx',
+        r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(1.2 times) Simulated flood data from 2000 to 2023.xlsx',
+        r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(1.5 times) Simulated flood data from 1984 to 1999.xlsx',
+        r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(1.5 times) Simulated flood data from 2000 to 2023.xlsx']
+    # Change to your file path
     sheet_names_0, sheet_names_1, sheet_names_2, sheet_names_3, sheet_names_4 = [], [], [], [], []
     sheet_names_5, sheet_names_6, sheet_names_7, sheet_names_8, sheet_names_9 = [], [], [], [], []
     for sheet in sheet_names_val:
@@ -139,46 +143,6 @@ def generate_dataset_simulate_groups(file_path, num_interval):
             sheet_group.append(sheet_names[j])
         sheet_groups.append(sheet_group)
     return sheet_groups
-
-
-@timefn
-def generate_dataset_simulate(num_interval, count):
-    file_path_list = ['C:/Users/Longwen-Liu/Desktop/洪水预处理/1984~1999年洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/2000~2023年洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(+200)生成的洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(+500)生成的洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(+1000)生成的洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(+0.2)生成的洪水数据预处理.xlsx',
-                      'C:/Users/Longwen-Liu/Desktop/洪水预处理/(-0.2)生成的洪水数据预处理.xlsx']  # Change to your file path
-    # Divide the simulation data
-    sheet_groups_1 = generate_dataset_simulate_groups(file_path_list[2], num_interval)
-    sheet_groups_2 = generate_dataset_simulate_groups(file_path_list[3], num_interval)
-    sheet_groups_3 = generate_dataset_simulate_groups(file_path_list[4], num_interval)
-    sheet_groups_4 = generate_dataset_simulate_groups(file_path_list[5], num_interval)
-    sheet_groups_5 = generate_dataset_simulate_groups(file_path_list[6], num_interval)
-
-    # train dataset
-    X_train_1, y_train_1, _ = generate_dataset_allexcel3_beta(file_path_list[2], sheet_groups_1[count])
-    X_train_2, y_train_2, _ = generate_dataset_allexcel3_beta(file_path_list[3], sheet_groups_2[count])
-    X_train_3, y_train_3, _ = generate_dataset_allexcel3_beta(file_path_list[4], sheet_groups_3[count])
-    X_train_4, y_train_4, _ = generate_dataset_allexcel3_beta(file_path_list[5], sheet_groups_4[count])
-    X_train_5, y_train_5, _ = generate_dataset_allexcel3_beta(file_path_list[6], sheet_groups_5[count])
-    # validation dataset
-    X_val_1, y_val_1 = generate_dataset_from_sheet(sheet_groups_1[count])
-    X_val_2, y_val_2 = generate_dataset_from_sheet(sheet_groups_2[count])
-    X_val_3, y_val_3 = generate_dataset_from_sheet(sheet_groups_3[count])
-    X_val_4, y_val_4 = generate_dataset_from_sheet(sheet_groups_4[count])
-    X_val_5, y_val_5 = generate_dataset_from_sheet(sheet_groups_5[count])
-
-    # join dataset
-    # train dataset
-    X_train = np.concatenate((X_train_1, X_train_2, X_train_3, X_train_4, X_train_5), axis=0)
-    y_train = np.concatenate((y_train_1, y_train_2, y_train_3, y_train_4, y_train_5), axis=0)
-    # validation dataset
-    X_val = np.concatenate((X_val_1, X_val_2, X_val_3, X_val_4, X_val_5), axis=0)
-    y_val = np.concatenate((y_val_1, y_val_2, y_val_3, y_val_4, y_val_5), axis=0)
-
-    return X_train, y_train, X_val, y_val
 
 
 def get_sheet_name():

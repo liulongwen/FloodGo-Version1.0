@@ -88,8 +88,7 @@ def predict_ch3(MyModel1, features_predict1, value_labels_predict1, device,
                 is_shown=True):  # features_predict, labels_predict1,
     model_new = MyModel1(60, 60, 20, 10)
     # Loading of model weights
-    model_new.load_state_dict(torch.load(r'C:\Users\Longwen-Liu\Desktop\共享文件夹\Train_network1\train_network'
-                                         r'\model_weight\using_best_value.model'))
+    model_new.load_state_dict(torch.load(r'C:\APP\Python\FloodGo-V1.0\train_network\model_weight\using_best_value.model'))  # Change to your file path
     # model_new.load_state_dict(torch.load(r'./best_value.model'))
     model_new.to(device)
     torch.set_printoptions(precision=8, sci_mode=False)
@@ -140,7 +139,7 @@ def predict_ch3(MyModel1, features_predict1, value_labels_predict1, device,
 
 def test_dataset():
     features_predict1, policy_labels_predict1, value_labels_predict1 = \
-        generate_dataset_allexcel3(r'C:\Users\Longwen-Liu\Desktop\洪水预处理\预测洪水数据-历史.xlsx')  # Change to your file path
+        generate_dataset_allexcel3(r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\Test flood data.xlsx')  # Change to your file path
     # Convert a matrix to a tensor
     # test dataset
     features_predict1 = torch.tensor(features_predict1, dtype=torch.float16)
@@ -154,7 +153,7 @@ def test_dataset():
 # Read test dataset
 print("Read test dataset.")
 features_predict, policy_labels_predict, value_labels_predict = \
-    generate_dataset_allexcel3(r'C:\Users\Longwen-Liu\Desktop\洪水预处理\预测洪水数据-历史.xlsx')  # Change to your file path
+    generate_dataset_allexcel3(r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\Test flood data.xlsx')  # Change to your file path
 print(f"test dataset shape：{features_predict.shape}")
 
 # Convert a matrix to a tensor

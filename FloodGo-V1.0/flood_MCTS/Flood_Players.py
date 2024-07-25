@@ -86,7 +86,9 @@ class PlayerOutflow(object):
 
 
 class MCTSPlayerPure(object):
-    """AI player based on MCTSPure"""
+    """
+    AI player based on MCTSPure
+    """
 
     def __init__(self, flood_board, c_puct=5, n_playout=2000):
         self.mcts_pure = MCTSPure(policy_value_fn_pure, flood_board, c_puct, n_playout)

@@ -105,7 +105,7 @@ def run():
     out_width, out_height = 20, 10
     features_num = 16
 
-    # value network weight parameter
+    # policy network weight parameter
     model_file1 = r'C:\APP\Python\FloodGo-V1.0\flood_MCTS\model_weight\using_best_policy.model'
     # value network weight parameter
     model_file2 = r'C:\APP\Python\FloodGo-V1.0\flood_MCTS\model_weight\using_best_value.model'

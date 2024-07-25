@@ -42,25 +42,3 @@ def format_data4(number):
                 return 0, 0, 0, gw
             else:
                 return 0, gw, xsw1, xsw2
-
-
-file_path = r'C:\Users\Longwen-Liu\Desktop\2016年洪水数据预处理（刘龙文2023.04.23）.xlsx'  # Change to your file path
-data_20160409 = pd.read_excel(file_path, sheet_name="20160409")
-
-np.set_printoptions(precision=0, threshold=np.inf, linewidth=np.inf)
-
-out_flow = data_20160409.iloc[0:, 1]
-
-for j in range(10):
-    b = format_data4(out_flow[j])
-    print('The number of ', j + 1, 'in dada:')
-    print('outflow:', out_flow[j])
-    labels_matrix = np.zeros([4, 10, 1])
-    if not np.isnan(b).any():
-        for i in range(len(b)):
-            labels_matrix[i, b[i], 0] = 1
-    print(labels_matrix)
-    out_flood_data = rs.labels_restore4(labels_matrix)
-    print('outflow:', out_flood_data)
-    print("=====================================================================")
-    print('')

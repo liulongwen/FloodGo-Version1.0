@@ -11,8 +11,7 @@ import os
 import random
 from train_network.calculate_tool.data_preprocess3 import generate_dataset3
 from train_network.calculate_tool.data_preprocess3 import generate_dataset_allexcel3, generate_dataset_allexcel3_beta
-from train_network.calculate_tool.file_path import generate_dataset_from_sheet, get_sheet_name, \
-    generate_dataset_from_sheet_bata, generate_dataset_simulate
+from train_network.calculate_tool.file_path import generate_dataset_from_sheet, get_sheet_name, generate_dataset_from_sheet_bata
 from train_network.calculate_tool.labels_restore import labels_restore4_true
 from train_network.calculate_tool.labels_restore import labels_restore4_predict
 from train_network.calculate_tool.data_preprocess1 import timefn
@@ -215,7 +214,7 @@ def train_ch6(MyModule1, train_iter1, test_iter1, num_epochs1, lr1, device, is_r
             print(f'epoch {epoch + 1}, train loss1 {train_l:.3f}, train acc {train_acc:.3f}, test loss1 {test_l:.3f},'
                   f' test acc {test_acc:.3f}')
             # specify the file path to save
-            file_path = r'C:\Users\Longwen-Liu\Desktop\data\policy_训练数据.txt'
+            file_path = r'C:\Users\Longwen-Liu\Desktop\data\policy_train_data.txt'
             # converts a tensor to a string
             loss_txt = f'epoch {epoch + 1}, train loss1 {train_l:.3f}, train acc {train_acc:.3f}, test loss1 {test_l:.3f},' \
                        f' test acc {test_acc:.3f}\n'
@@ -242,7 +241,7 @@ def train_ch6(MyModule1, train_iter1, test_iter1, num_epochs1, lr1, device, is_r
                     number1 = number1 + 1
 
             # Specify the file path to save
-            file_path = r'C:\Users\Longwen-Liu\Desktop\洪水预处理\policy_loss.txt'
+            file_path = r'C:\Users\Longwen-Liu\Desktop\data\policy_loss.txt'
             # converts a tensor to a string
             loss_txt = f'epoch,{epoch + 1},train loss1,{train_l:.3f},train acc,{train_acc:.3f}\n'
             # writes the tensor string to a file
@@ -323,32 +322,34 @@ print(f"\nThe average accuracy on the verification set after K-fold cross-valida
 print("Official training begins!")
 print("Read Excel data and convert it to a matrix.")
 features1984_1999, policy_labels1984_1999, value_labels1984_1999 = generate_dataset_allexcel3(
-    r'C:\Users\Longwen-Liu\Desktop\洪水预处理\1984~1999年洪水数据预处理.xlsx', labels_preprocess=True)  # Change to your file path
+    r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\Historical flood data from 1984 to 1999.xlsx',
+    labels_preprocess=True)  # Change to your file path
 features2000_2023, policy_labels2000_2023, value_labels2000_2023 = generate_dataset_allexcel3(
-    r'C:\Users\Longwen-Liu\Desktop\洪水预处理\2000~2023年洪水数据预处理.xlsx', labels_preprocess=True)
+    r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\Historical flood data from 2000 to 2023.xlsx',
+    labels_preprocess=True)
 features_05_1984, policy_labels_05_1984, value_labels_05_1984 = generate_dataset_allexcel3(
-    r'C:\Users\Longwen-Liu\Desktop\洪水预处理\(0.5)1984~1999年洪水数据预处理.xlsx',
+    r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(0.5 times) Simulated flood data from 1984 to 1999.xlsx',
     labels_preprocess=True)
 features_05_2000, policy_labels_05_2000, value_labels_05_2000 = generate_dataset_allexcel3(
-    r'C:\Users\Longwen-Liu\Desktop\洪水预处理\(0.5)2000~2023年洪水数据预处理.xlsx',
+    r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(0.5 times) Simulated flood data from 2000 to 2023.xlsx',
     labels_preprocess=True)
 features_08_1984, policy_labels_08_1984, value_labels_08_1984 = generate_dataset_allexcel3(
-    r'C:\Users\Longwen-Liu\Desktop\洪水预处理\(0.8)1984~1999年洪水数据预处理.xlsx',
+    r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(0.8 times) Simulated flood data from 1984 to 1999.xlsx',
     labels_preprocess=True)
 features_08_2000, policy_labels_08_2000, value_labels_08_2000 = generate_dataset_allexcel3(
-    r'C:\Users\Longwen-Liu\Desktop\洪水预处理\(0.8)2000~2023年洪水数据预处理.xlsx',
+    r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(0.8 times) Simulated flood data from 2000 to 2023.xlsx',
     labels_preprocess=True)
 features_12_1984, policy_labels_12_1984, value_labels_12_1984 = generate_dataset_allexcel3(
-    r'C:\Users\Longwen-Liu\Desktop\洪水预处理\(1.2)1984~1999年洪水数据预处理.xlsx',
+    r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(1.2 times) Simulated flood data from 1984 to 1999.xlsx',
     labels_preprocess=True)
 features_12_2000, policy_labels_12_2000, value_labels_12_2000 = generate_dataset_allexcel3(
-    r'C:\Users\Longwen-Liu\Desktop\洪水预处理\(1.2)2000~2023年洪水数据预处理.xlsx',
+    r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(1.2 times) Simulated flood data from 2000 to 2023.xlsx',
     labels_preprocess=True)
 features_15_1984, policy_labels_15_1984, value_labels_15_1984 = generate_dataset_allexcel3(
-    r'C:\Users\Longwen-Liu\Desktop\洪水预处理\(1.5)1984~1999年洪水数据预处理.xlsx',
+    r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(1.5 times) Simulated flood data from 1984 to 1999.xlsx',
     labels_preprocess=True)
 features_15_2000, policy_labels_15_2000, value_labels_15_2000 = generate_dataset_allexcel3(
-    r'C:\Users\Longwen-Liu\Desktop\洪水预处理\(1.5)2000~2023年洪水数据预处理.xlsx',
+    r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\(1.5 times) Simulated flood data from 2000 to 2023.xlsx',
     labels_preprocess=True)  # Change to your file path
 
 # Connected data matrix

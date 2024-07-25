@@ -84,7 +84,7 @@ print("read test dataset")
 #     r'C:\Users\Longwen-Liu\Desktop\洪水预处理\预测洪水数据-5.xlsx', labels_preprocess=False)
 # multiple flood forecasts
 features_predict, policy_labels_predict, value_labels_predict = generate_dataset_allexcel3(
-    r'C:\Users\Longwen-Liu\Desktop\洪水预处理\预测洪水数据-历史.xlsx')  # Change to your file path
+    r'C:\Users\Longwen-Liu\Desktop\FloodGo-Version1.0-main\data\Test flood data.xlsx')  # Change to your file path
 print(f"test dataset shape：{features_predict.shape}")
 
 # Define batch number
@@ -102,8 +102,7 @@ def predict_ch3(MyModel1, features_predict1, policy_labels_predict1, device, is_
                 labels_preprocess=True):  # features_predict, labels_predict1,
     model_new = MyModel1(60, 60, 20, 10)
     # Loading of model weights
-    model_new.load_state_dict(torch.load(r'C:\Users\Longwen-Liu\Desktop\共享文件夹\flood-oparate-project\floodoperate'
-                                         r'\model_weight\using_best_policy.model'))  # Change to your file path
+    model_new.load_state_dict(torch.load(r'C:\APP\Python\FloodGo-V1.0\train_network\model_weight\using_best_policy.model'))  # Change to your file path
     # model_new.load_state_dict(torch.load(r'current_policy.model'))
     # model_new.load_state_dict(torch.load(r'best_policy.model'))
     model_new.to(device)
